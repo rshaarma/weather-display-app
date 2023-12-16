@@ -16,21 +16,96 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="assets/style.css" />
     <title>Weather Dashboard</title>
   </head>
 
   <body>
-    <header
-      class="container-fluid text-center text-white bg-dark p-2 weather-header"
-    >
-      <h1>Weather Dashboard</h1>
+    <header class="container text-center text-white p-4 weather-header">
+      <h1 class="pb-2">Weather Forecast</h1>
+      <div class="d-flex align-items-center justify-content-center">
+        <form class="form w-75 d-flex">
+          <input
+            class="form-control mr-sm-2 p-3"
+            type="search"
+            placeholder="eg. London"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-sm-0 w-25" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
     </header>
 
+    <main class="container">
+      <div class="row justify-content-between">
+        <section class="col-lg-3 border border-danger">
+          <button type="button" class="btn btn-outline-warning w-100">
+            Clear History
+          </button>
+          <div id="history-searches"></div>
+        </section>
+
+        <section class="col-lg-9">
+          <div id="weather-today" class="weather-today"></div>
+          <h5 class="five-day p-2 text-bg-danger">5 day forecast</h5>
+          <div class="container">
+            <div class="row gap-3">
+              <div class="weather-card col">
+                <p class="day"></p>
+                <hr />
+                <img src="" class="weather-img" />
+                <p class="max"></p>
+                <p class="min"></p>
+                <p class="wind"></p>
+                <p class="humidity"></p>
+              </div>
+              <div class="weather-card col">
+                <p class="day"></p>
+                <hr />
+                <img src="" class="weather-img" />
+                <p class="max"></p>
+                <p class="min"></p>
+                <p class="wind"></p>
+                <p class="humidity"></p>
+              </div>
+              <div class="weather-card col">
+                <p class="day"></p>
+                <hr />
+                <img src="" class="weather-img" />
+                <p class="max"></p>
+                <p class="min"></p>
+                <p class="wind"></p>
+                <p class="humidity"></p>
+              </div>
+              <div class="weather-card col">
+                <p class="day"></p>
+                <hr />
+                <img src="" class="weather-img" />
+                <p class="max"></p>
+                <p class="min"></p>
+                <p class="wind"></p>
+                <p class="humidity"></p>
+              </div>
+              <div class="weather-card col">
+                <p class="day"></p>
+                <hr />
+                <img src="" class="weather-img" />
+                <p class="max"></p>
+                <p class="min"></p>
+                <p class="wind"></p>
+                <p class="humidity"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
     <!-- max-width for ultra wide resolutions -->
-    <div class="container-fluid" style="max-width: 1400px">
-      <div class="row">
-        <aside class="col-lg-3 pb-3">
+    <!-- <div class="container-fluid">
+      <div class="row main-container">
+        <aside class="col-lg-3 pb-3 weather-input">
           <h2 id="form-heading" class="mt-1 h3 form-label">
             Search for a City:
           </h2>
@@ -38,7 +113,7 @@
             <div class="form-inline form-group">
               <div class="input-group">
                 <input
-                  class="form-input weather-search"
+                  class="form-input city-input"
                   type="text"
                   id="search-input"
                   placeholder="London"
@@ -62,27 +137,66 @@
           <div class="list-group" id="history"></div>
         </aside>
 
-        <div class="col-lg-9 pb-3">
+        <div class="col-lg-9 pb-3 weather-data">
           <section
             id="today"
-            class="mt-3"
+            class="mt-3 current-weather"
             role="region"
             aria-live="polite"
-          ></section>
+          >
+            <h2></h2>
+            <h6>Temperature:</h6>
+            <h6>Wind:</h6>
+            <h6>Humidity:%</h6>
+          </section>
           <section
             id="forecast"
-            class="row mt-3"
+            class="row mt-3 days-forecast"
             role="region"
             aria-live="polite"
-          ></section>
+          >
+            <h2>5- Day Forecast</h2>
+            <ul class="">
+              <li class="card">
+                <h3></h3>
+                <h6>Temperature:</h6>
+                <h6>Wind:</h6>
+                <h6>Humidity:</h6>
+              </li>
+              <li class="card">
+                <h3></h3>
+                <h6>Temperature:</h6>
+                <h6>Wind:</h6>
+                <h6>Humidity:</h6>
+              </li>
+              <li class="card">
+                <h3></h3>
+                <h6>Temperature:</h6>
+                <h6>Wind:</h6>
+                <h6>Humidity:</h6>
+              </li>
+              <li class="card">
+                <h3></h3>
+                <h6>Temperature:</h6>
+                <h6>Wind:</h6>
+                <h6>Humidity:</h6>
+              </li>
+              <li class="card">
+                <h3></h3>
+                <h6>Temperature:</h6>
+                <h6>Wind:</h6>
+                <h6>Humidity:</h6>
+              </li>
+            </ul>
+          </section>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Day.js -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script src="/assets/script.js"></script>
   </body>
 </html>
