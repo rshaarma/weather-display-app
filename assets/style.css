@@ -18,7 +18,13 @@ body {
   height: 200px;
   background-color: transparent;
 }
+
+.five-day {
+  border-radius: 10px;
+}
+
 .weather-card {
   height: 200px;
   background-color: antiquewhite;
+  border-radius: 10px;
 }
