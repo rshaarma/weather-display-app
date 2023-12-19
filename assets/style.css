@@ -2,7 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+  font-family: Tahoma, Geneva, Verdana;
+}
+html {
+  height: 100vh;
+  width: auto;
 }
 
 body {
@@ -10,21 +14,41 @@ body {
     url("/assets/beach\ pic.avif");
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
-  height: 100vh;
 }
 
 .weather-today {
-  height: 200px;
+  height: 350px;
   background-color: transparent;
 }
 
-.five-day {
-  border-radius: 10px;
+.card {
+  border-radius: 6px;
+  height: 200px;
 }
 
-.weather-card {
-  height: 200px;
-  background-color: antiquewhite;
-  border-radius: 10px;
+ul {
+  padding-left: 0;
+}
+.cards-image {
+  height: 60px;
+  width: 65px;
+  margin-top: 0px;
+}
+
+.card-details {
+  font-size: 0.9rem;
+}
+
+.clear-history-button {
+  width: 90%;
+}
+.searched-city {
+  margin: 3px;
+  margin-bottom: 5px;
+  display: block;
+  text-align: center;
+  width: 70%;
+  margin-top: 20px;
+  padding: 2px;
+  background-color: aqua;
 }
