@@ -10,7 +10,8 @@ html {
 }
 /* linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), */
 body {
-  background-image: url("./images/headerpic.avif");
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
+    url("./images/headerpic.avif");
   background-repeat: no-repeat;
   background-size: cover;
 }
