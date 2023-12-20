@@ -5,7 +5,7 @@
 
   <p align="center">
     <strong>Explore the docs »</strong>
-    <a href="https://rshaarma.github.io/work-planner/" target="_blank">Deployed URL</a>
+    <a href="https://rshaarma.github.io/weather-display-app/" target="_blank">Deployed URL</a>
     ·
     <a href="https://github.com/rshaarma/weather-display-app/issues">Report Bug</a>
     ·
