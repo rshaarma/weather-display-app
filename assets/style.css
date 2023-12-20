@@ -17,13 +17,38 @@ body {
 }
 
 .weather-today {
-  height: 350px;
+  height: 200px;
   background-color: transparent;
+  color: ivory;
+}
+.weather-today .weather-day-div {
+  text-align: center;
+}
+
+.weather-today .weather-day-div img {
+  min-width: 130px;
+  margin-top: -20px;
+}
+
+.weather-today .weather-day-div h5 {
+  margin-top: -10px;
+  text-transform: capitalize;
+}
+
+.weather-day-div {
+  padding-right: 150px;
+}
+
+.weather-day-image {
+  height: 120px;
+  text-align: center;
 }
 
 .card {
   border-radius: 6px;
-  height: 200px;
+  height: 180px;
+  text-align: center;
+  background-color: #f7ede2;
 }
 
 ul {
@@ -40,8 +65,12 @@ ul {
 }
 
 .clear-history-button {
-  width: 90%;
+  width: 75%;
+  /* background-color: #84a59d; */
+  border-radius: 5px;
+  color: #edede9;
 }
+
 .searched-city {
   margin: 3px;
   margin-bottom: 5px;
@@ -50,5 +79,5 @@ ul {
   width: 70%;
   margin-top: 20px;
   padding: 2px;
-  background-color: aqua;
+  background-color: #edede9;
 }

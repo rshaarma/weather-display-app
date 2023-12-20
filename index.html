@@ -34,8 +34,9 @@
           />
           <button
             id="search-button"
-            class="btn btn-outline-success my-sm-0 w-25"
+            class="btn my-sm-0 w-25 p-3"
             type="submit"
+            style="background-color: #588157; color: aliceblue"
           >
             Search
           </button>
@@ -47,7 +48,7 @@
           <button
             type="button"
             id="clear-history"
-            class="btn btn-outline-warning mt-5 clear-history-button"
+            class="btn btn-outline-danger mt-5 clear-history-button"
           >
             Clear History
           </button>
@@ -57,9 +58,11 @@
         <section class="col-lg-9">
           <div
             id="weather-today"
-            class="weather-today d-flex justify-content-around"
+            class="weather-today d-flex justify-content-between pt-3"
           ></div>
-          <h5 class="p-2 text-bg-danger">5 day forecast</h5>
+          <h5 style="background-color: #d5bdaf; color: white" class="p-2">
+            5 - Day Forecast
+          </h5>
           <div class="container">
             <ul class="row weather-cards justify-content-between"></ul>
           </div>
