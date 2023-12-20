@@ -8,10 +8,9 @@ html {
   height: 100vh;
   width: auto;
 }
-
+/* linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), */
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
-    url("/assets/images/headerpic.avif");
+  background-image: url("./images/headerpic.avif");
   background-repeat: no-repeat;
   background-size: cover;
 }

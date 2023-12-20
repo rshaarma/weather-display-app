@@ -65,7 +65,7 @@ function getWeatherDetails(cityName, latitude, longitude) {
             "beforeend",
             `
             <div class="current-forecast">
-                <h1>${cityName}(${dayjs(item.dt_txt.split(" ")[0]).format(
+                <h1>${cityName} (${dayjs(item.dt_txt.split(" ")[0]).format(
               "DD / MM / YYYY"
             )})</h1>
             <h6>Temperature:${(item.main.temp - 273.15).toFixed(2)} °C</h6>
