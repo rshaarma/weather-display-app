@@ -4,12 +4,28 @@ const historySearches = document.getElementById("history-searches");
 const weatherToday = document.getElementById("weather-today");
 const weatherCards = document.querySelector(".weather-cards");
 const clearHistoryBtn = document.getElementById("clear-history");
-let searchedCitiesBtns = [];
-
 const API_KEY = "bf9df75eeb5dfc02a2e3f7d42c3b052c";
+
+let storedCities = [];
+
+init();
+
+function getUserCurrentCoordinates() {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    const { latitude, longitude } = position.coords;
+    const URL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
+    fetch(URL)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        const { name } = data[0];
+        getWeatherDetails(name, latitude, longitude);
+      });
+  });
+}
 function getCityCoordinates(cityName) {
   //   const cityName = cityInput.value.trim();
-  if (cityName === "") return;
   fetch(
     `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${API_KEY}`
   )
@@ -25,13 +41,12 @@ function getCityCoordinates(cityName) {
 
 function getWeatherDetails(cityName, latitude, longitude) {
   const COORD_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
-  //   console.log(cityName);
+
   fetch(COORD_URL)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      //   console.log(data);
       const forecastDays = [];
       const fiveDays = data.list.filter(function (forcast) {
         const date = new Date(forcast.dt_txt).getDate();
@@ -96,13 +111,30 @@ function getWeatherDetails(cityName, latitude, longitude) {
     });
 }
 
+function init() {
+  let lastSearched = JSON.parse(localStorage.getItem("searchedCitiesBtns"));
+  if (lastSearched !== null) {
+    storedCities = lastSearched;
+    console.log(storedCities);
+  }
+  renderButtons();
+  getUserCurrentCoordinates();
+}
+
+function storeCities() {
+  return localStorage.setItem(
+    "searchedCitiesBtns",
+    JSON.stringify(storedCities)
+  );
+}
+
 function renderButtons() {
   historySearches.replaceChildren();
-  for (let i = 0; i < searchedCitiesBtns.length; i++) {
+  for (let i = 0; i < storedCities.length; i++) {
     const btn = document.createElement("button");
     btn.classList.add("searched-city");
-    btn.setAttribute("data-name", searchedCitiesBtns[i]);
-    btn.textContent = searchedCitiesBtns[i];
+    btn.setAttribute("data-name", storedCities[i]);
+    btn.textContent = storedCities[i];
     historySearches.appendChild(btn);
   }
 }
@@ -110,28 +142,36 @@ function renderButtons() {
 button.addEventListener("click", function (e) {
   e.preventDefault();
   const city = cityInput.value.trim();
-  getCityCoordinates(city);
-  localStorage.setItem("city", JSON.stringify(city));
-  const lastSearched = JSON.parse(localStorage.getItem("city"));
-  searchedCitiesBtns.push(lastSearched);
-  localStorage.setItem(
-    "searchedCitiesBtns",
-    JSON.stringify(searchedCitiesBtns)
-  );
+  if (storedCities.includes(city)) return alert("Please enter another city!");
+  storedCities.push(city);
   weatherCards.textContent = "";
   weatherToday.textContent = "";
+  storeCities();
+  getCityCoordinates(city);
   renderButtons();
 });
 
 historySearches.addEventListener("click", function (e) {
   const item = e.target;
+  weatherCards.textContent = "";
+  weatherToday.textContent = "";
   if (item.matches("button")) {
     const value = item.getAttribute("data-name");
-    getCityCoordinates(item);
+    getCityCoordinates(value);
+    storeCities();
+    renderButtons();
   }
 });
-renderButtons();
-// cityInput.addEventListener(
-//   "keyup",
-//   (e) => e.key === "Enter" && getCityCoordinates()
-// );
+
+cityInput.addEventListener("keyup", function (e) {
+  if (e.key === "Enter") {
+    const city = cityInput.value.trim();
+    if (storedCities.includes(city)) return alert("Please enter another city!");
+    storedCities.push(city);
+    weatherCards.textContent = "";
+    weatherToday.textContent = "";
+    storeCities();
+    getCityCoordinates(city);
+    renderButtons();
+  }
+});
