@@ -94,14 +94,10 @@ CSS3
 JAVASCRIPT
 ```
 
-```shell
-jQuery
-```
-
 #### Clone the repository
 
 ```shell
-git clone git@github.com:rshaarma/work-planner.git
+git clone git@github.com:rshaarma/weather-display-app.git
 cd project
 ```
 
@@ -117,7 +113,6 @@ See the [open issues](https://github.com/rshaarma/weather-display-app/issues) fo
 2. Github (https://github.com/)
 3. Mdn Mozilla (https://developer.mozilla.org/en-US/)
 4. Dayjs(https://day.js.org/en/)
-   5.jQuery(https://jquery.com/)
 
 <!-- CONTRIBUTING -->
 
