@@ -10,23 +10,23 @@ let storedCities = [];
 
 init();
 
-// function getUserCurrentCoordinates() {
-//   navigator.geolocation.getCurrentPosition(function (position) {
-//     const { latitude, longitude } = position.coords;
-//     const URL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
-//     fetch(URL)
-//       .then(function (response) {
-//         return response.json();
-//       })
-//       .then(function (data) {
-//         const { name } = data[0];
-//         getWeatherDetails(name, latitude, longitude);
-//       });
-//   });
-// }
+function getUserCurrentCoordinates() {
+  navigator.geolocation.getCurrentPosition(function (position) {
+    const { latitude, longitude } = position.coords;
+    const URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
+    fetch(URL)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        const { name } = data[0];
+        getWeatherDetails(name, latitude, longitude);
+      });
+  });
+}
 function getCityCoordinates(cityName) {
   fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${API_KEY}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${API_KEY}`
   )
     .then(function (response) {
       return response.json();
@@ -117,7 +117,7 @@ function init() {
     console.log(storedCities);
   }
   renderButtons();
-  // getUserCurrentCoordinates();
+  getUserCurrentCoordinates();
 }
 
 function storeCities() {
