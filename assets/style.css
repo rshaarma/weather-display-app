@@ -15,6 +15,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.weather-header h1 {
+  color: #d5bdaf;
+  font-family: "Rubik Lines";
+  font-size: 50px;
+}
 
 .weather-today {
   height: 200px;
