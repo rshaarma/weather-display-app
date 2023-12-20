@@ -30,36 +30,6 @@
 - [Contributing](#contributing)
 - [Contact](#contact)
 
-## Acceptance Criteria
-
-When a user searches for a city they are presented with current and future conditions for that city and that city is added to the search history.
-
-When a user views the current weather conditions for that city they are presented with:
-
-The city name
-
-The date
-
-An icon representation of weather conditions
-
-The temperature
-
-The humidity
-
-The wind speed
-
-When a user views future weather conditions for that city they are presented with a 5-day forecast that displays:
-
-The date
-
-An icon representation of weather conditions
-
-The temperature
-
-The humidity
-
-When a user clicks on a city in the search history they are again presented with current and future conditions for that city.
-
 ## About The Project
 
 This repository contains Weather Forecast application that allows the user to search weather forecast of different cities around the world. This App is using a call API that allowing you to get information on the weather for today and next 5-days forcast. It runs in the browser and has dynamically updated HTML and CSS powered by Javascript. The events are saved into local storage so that if the user refreshes the app webpage, they don't lose all their saved events.
