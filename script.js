@@ -15,7 +15,7 @@ function getUserCurrentCoordinates() {
     const { latitude, longitude } = position.coords;
 
     fetch(
-      `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`
+      `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
     )
       .then(function (response) {
         return response.json();
@@ -55,7 +55,7 @@ function getWeatherDetails(cityName, latitude, longitude) {
           return forecastDays.push(date);
         }
       });
-      console.log(fiveDays);
+      // console.log(fiveDays);
       cityInput.value = "";
       weatherToday.value = "";
       weatherCards.value = "";
