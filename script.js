@@ -13,8 +13,10 @@ init();
 function getUserCurrentCoordinates() {
   navigator.geolocation.getCurrentPosition(function (position) {
     const { latitude, longitude } = position.coords;
-    const URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
-    fetch(URL)
+
+    fetch(
+      `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`
+    )
       .then(function (response) {
         return response.json();
       })
@@ -39,9 +41,9 @@ function getCityCoordinates(cityName) {
 }
 
 function getWeatherDetails(cityName, latitude, longitude) {
-  const COORD_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`;
-
-  fetch(COORD_URL)
+  fetch(
+    `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
+  )
     .then(function (response) {
       return response.json();
     })
