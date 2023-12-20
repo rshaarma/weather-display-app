@@ -11,7 +11,7 @@ html {
 /* linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)), */
 body {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
-    url("./images/headerpic.avif");
+    url("./images/beach.avif");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -22,7 +22,7 @@ body {
 }
 
 .weather-today {
-  height: 200px;
+  height: 280px;
   background-color: transparent;
   color: ivory;
 }
@@ -51,7 +51,7 @@ body {
 
 .card {
   border-radius: 6px;
-  height: 180px;
+  height: 250px;
   text-align: center;
   background-color: #f7ede2;
 }

@@ -84,17 +84,17 @@ function getWeatherDetails(cityName, latitude, longitude) {
           weatherCards.insertAdjacentHTML(
             "beforeend",
             `
-                <li class="card col-lg-2 pt-2">
+                <li class="card col-lg-2 pt-3">
                     <h6>${dayjs(item.dt_txt.split(" ")[0]).format(
                       "DD/MM/YYYY"
                     )}</h6>    
-                   <img class="cards-image" src="https://openweathermap.org/img/wn/${
+                   <img class="cards-image mb-3" src="https://openweathermap.org/img/wn/${
                      item.weather[0].icon
                    }@2x.png">
-                   <h6 class="card-details mb-2">Temp: ${(
+                   <h6 class="card-details mb-3">Temp: ${(
                      item.main.temp - 273.15
                    ).toFixed(2)}°C</h6>
-                   <h6 class="card-details mb-2">Wind: ${(
+                   <h6 class="card-details mb-3">Wind: ${(
                      (item.wind.speed * 18) %
                      5
                    ).toFixed(1)}KMH</h6>
