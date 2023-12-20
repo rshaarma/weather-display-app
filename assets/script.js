@@ -134,7 +134,7 @@ function renderButtons() {
     btn.classList.add("searched-city");
     btn.setAttribute("data-name", storedCities[i]);
     btn.textContent = storedCities[i];
-    historySearches.appendChild(btn);
+    historySearches.prepend(btn);
   }
 }
 
