@@ -11,7 +11,7 @@
     <a href="https://github.com/rshaarma/weather-display-app/issues">Request Feature</a>
   </p>
 </p>
- <img width="1399" alt="Screenshot 2023-12-20 at 03 46 00" src="https://github.com/rshaarma/weather-display-app/assets/64362564/25c82b45-fea3-4819-a4c0-81d71738f02f">
+ <!-- <img width="1399" alt="Screenshot 2023-12-20 at 03 46 00" src="https://github.com/rshaarma/weather-display-app/assets/64362564/25c82b45-fea3-4819-a4c0-81d71738f02f"> -->
  <img width="1397" alt="Screenshot 2023-12-20 at 03 47 50" src="https://github.com/rshaarma/weather-display-app/assets/64362564/9ae84e3b-c523-4489-acf7-9538bda5faac">
 <img width="1388" alt="Screenshot 2023-12-20 at 04 07 07" src="https://github.com/rshaarma/weather-display-app/assets/64362564/aedd9408-8e81-495a-a1df-0fa128109733">
 <!-- TABLE OF CONTENTS -->
